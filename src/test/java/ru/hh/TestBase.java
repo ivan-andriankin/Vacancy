@@ -19,6 +19,10 @@ public class TestBase {
 
     static String currentCityRus = "Тольятти";
     static String currentCityEng = "Tolyatti";
+    static String x5Group = "X5 Group";
+    static String x5GroupImport = "X5 GROUP, Import";
+    static String x5Digital = "X5 Digital";
+
 
     @BeforeAll
     static void beforeAll() {

@@ -15,10 +15,10 @@ public class Tests extends TestBase {
     @Test
     void findVacancyQaEngineerInX5Group() {
         siteObjects.openPage()
-                .putValueInSearchFieldAndSubmit("X5 Group")
+                .putValueInSearchFieldAndSubmit(x5Group)
                 .unsetCurrentCityFromFilter(currentCityRus)
-                .clickOnCompanyCardInSearchResults("X5 Group")
-                .goToCompanyPageFromVacancyCard("X5 GROUP, Import")
+                .clickOnCompanyCardInSearchResults(x5Group)
+                .goToCompanyPageFromVacancyCard(x5GroupImport)
                 .expandVacanciesDropDownCategories("Вакансии в других регионах")
                 .expandVacanciesDropDownCategories("Тестировщик")
                 .clickOnTheVacancy("QA-инженер (web)");
@@ -29,9 +29,9 @@ public class Tests extends TestBase {
     @Test
     void findVacancyBackendQaEngineerInX5Digital() {
         siteObjects.openPage()
-                .putValueInSearchFieldAndSubmit("X5 digital")
+                .putValueInSearchFieldAndSubmit(x5Digital)
                 .unsetCurrentCityFromFilter(currentCityRus)
-                .goToCompanyPageFromVacancyCard("X5 Digital")
+                .goToCompanyPageFromVacancyCard(x5Digital)
                 .expandVacanciesDropDownCategories("Вакансии в других регионах")
                 .expandVacanciesDropDownCategories("Тестировщик")
                 .clickOnTheVacancy("QA-инженер (web)");
@@ -67,9 +67,9 @@ public class Tests extends TestBase {
     @Test
     void checkPresenseOfButtonToGoToX5DigitalSite() {
         siteObjects.openPage()
-                .putValueInSearchFieldAndSubmit("X5 digital")
+                .putValueInSearchFieldAndSubmit(x5Digital)
                 .unsetCurrentCityFromFilter(currentCityRus)
-                .goToCompanyPageFromVacancyCard("X5 Digital")
+                .goToCompanyPageFromVacancyCard(x5Digital)
                 .clickIWantToWorkHereButton()
                 .checkTitleOfFirstAccountLoginForm();
     }
@@ -79,10 +79,10 @@ public class Tests extends TestBase {
     @Test
     void checkPresenseOfButtonToGoToX5GroupSite() {
         siteObjects.openPage()
-                .putValueInSearchFieldAndSubmit("X5 Group")
+                .putValueInSearchFieldAndSubmit(x5Group)
                 .unsetCurrentCityFromFilter(currentCityRus)
-                .clickOnCompanyCardInSearchResults("X5 Group")
-                .goToCompanyPageFromVacancyCard("X5 GROUP, Import")
+                .clickOnCompanyCardInSearchResults(x5Group)
+                .goToCompanyPageFromVacancyCard(x5GroupImport)
                 .goToX5TechPage()
                 .CheckIWantToWorkHereButtonIsVisible();
     }
