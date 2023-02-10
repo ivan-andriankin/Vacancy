@@ -9,14 +9,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.provider.Arguments;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.hh.helpers.Attach;
-import ru.hh.utils.Locale;
 
 import java.util.List;
 import java.util.stream.Stream;
 
 public class TestBase {
 
-    PageObjects pageObjects = new PageObjects();
+    SiteObjects siteObjects = new SiteObjects();
 
     static String currentCityRus = "Тольятти";
     static String currentCityEng = "Tolyatti";

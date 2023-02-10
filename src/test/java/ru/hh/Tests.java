@@ -1,90 +1,90 @@
 package ru.hh;
 
-import com.codeborne.selenide.Condition;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
-import ru.hh.utils.Locale;
 
 import java.util.List;
 
-import static com.codeborne.selenide.CollectionCondition.texts;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.*;
-
 public class Tests extends TestBase {
 
+    SiteObjects siteObjects = new SiteObjects();
+
+    @DisplayName("Найти вакансию 'QA-инженер (web)' в 'X5 Group'")
     @Test
-    void test1() {
-        open("/");
-        $("#a11y-search-input").setValue("X5 Group");
-        $("[data-qa=search-button]").click();
-        $$("[data-qa=serp__novafilter-title]").findBy(text(currentCityRus)).click();
-        $$("div").findBy(text("X5 Group")).click();
-        $$("[data-qa=vacancy-serp__vacancy-employer]").findBy(text("X5 GROUP, Import")).click();
-        $$("span").findBy(text("Вакансии в других регионах")).click();
-        $$("span").findBy(text("Тестировщик")).click();
-        $$(".bloko-link").findBy(text("QA-инженер (web)")).click();
+    void findVacancyQaEngineerInX5Group() {
+        siteObjects.openPage()
+                .putValueInSearchFieldAndSubmit("X5 Group")
+                .unsetCurrentCityFromFilter(currentCityRus)
+                .clickOnCompanyCardInSearchResults("X5 Group")
+                .goToCompanyPageFromVacancyCard("X5 GROUP, Import")
+                .expandVacanciesDropDownCategories("Вакансии в других регионах")
+                .expandVacanciesDropDownCategories("Тестировщик")
+                .clickOnTheVacancy("QA-инженер (web)");
     }
 
+
+    @DisplayName("Найти вакансию 'Backend QA engineer' в 'X5 Digital'")
     @Test
-    void test2() {
-        open("/");
-        $("#a11y-search-input").setValue("X5 digital");
-        $("[data-qa=search-button]").click();
-        $$("[data-qa=serp__novafilter-title]").findBy(text(currentCityRus)).click();
-        $$("[data-qa=vacancy-serp__vacancy-employer]").findBy(text("X5 Digital")).click();
-        $$("span").findBy(text("Вакансии в других регионах")).click();
-        $$("span").findBy(text("Тестировщик")).click();
-        $$(".bloko-link").findBy(text("Backend QA engineer")).click();
+    void findVacancyBackendQaEngineerInX5Digital() {
+        siteObjects.openPage()
+                .putValueInSearchFieldAndSubmit("X5 digital")
+                .unsetCurrentCityFromFilter(currentCityRus)
+                .goToCompanyPageFromVacancyCard("X5 Digital")
+                .expandVacanciesDropDownCategories("Вакансии в других регионах")
+                .expandVacanciesDropDownCategories("Тестировщик")
+                .clickOnTheVacancy("QA-инженер (web)");
     }
+
 
     @MethodSource("menuItems")
-    @ParameterizedTest(name="qqq")
-    void test3(List<String> buttons) {
-        open("/");
-        $$(".lang--N5GSKUyI3fBf0bLLxFVh").last().click();
-        $$(".supernova-navi-item.supernova-navi-item_lvl-1").shouldHave(texts(buttons));
+    @ParameterizedTest(name="Проверить набор кнопок {0} верхней панели на английском и на русском")
+    void checkSetOfButtonsInTopMenuInEnglishAndRussian(List<String> buttons) {
+        siteObjects.openPage()
+                .changeLanguage()
+                .checkButtonsInTopMenu(buttons);
     }
 
+
+    @DisplayName("Проверить, что указан правильный город во фразе 1")
     @Test
-    void test4() {
-            open("/");
-            $("h1[data-qa=bloko-header-2]").shouldHave(text("Вакансии дня в " + currentCityRus));
+    void checkCorrectCityInFirstPhrase() {
+        siteObjects.openPage()
+                .checkCurrentCityInPhraseOne(currentCityRus);
     }
 
+
+    @DisplayName("Проверить, что указан правильный город во фразе 2")
     @Test
-    void test5() {
-        open("/");
-        $$("a[data-qa=index__work-in-profession-header]").last()
-                .shouldHave(text("Работа по профессиям в " + currentCityRus));
+    void checkCorrectCityInSecondFrase() {
+        siteObjects.openPage()
+                .checkCurrentCityInPhraseTwo(currentCityRus);
     }
 
-    @Test
-    void test6() {
-        open("/");
-        $("#a11y-search-input").setValue("X5 digital");
-        $("[data-qa=search-button]").click();
-        $$("[data-qa=serp__novafilter-title]").findBy(text(currentCityRus)).click();
-        $$("[data-qa=vacancy-serp__vacancy-employer]").findBy(text("X5 Digital")).click();
-        $("[data-qa=resumeservice-button__targetemployer]").click();
-        $$(".account-login-tile").first().shouldHave(text("Войдите на сайт"));
 
+    @DisplayName("Проверить наличие кнопки перехода на сайт X5 Digital")
+    @Test
+    void checkPresenseOfButtonToGoToX5DigitalSite() {
+        siteObjects.openPage()
+                .putValueInSearchFieldAndSubmit("X5 digital")
+                .unsetCurrentCityFromFilter(currentCityRus)
+                .goToCompanyPageFromVacancyCard("X5 Digital")
+                .clickIWantToWorkHereButton()
+                .checkTitleOfFirstAccountLoginForm();
     }
 
+
+    @DisplayName("Проверить наличие кнопки перехода на сайт X5 Group")
     @Test
-    void test7() {
-        open("/");
-        $("#a11y-search-input").setValue("X5 Group");
-        $("[data-qa=search-button]").click();
-        $$("[data-qa=serp__novafilter-title]").findBy(text(currentCityRus)).click();
-        $$("div").findBy(text("X5 Group")).click();
-        $$("[data-qa=vacancy-serp__vacancy-employer]").findBy(text("X5 GROUP, Import")).click();
-        $(".th_illustration__link.th_illustration__link--tech.th_dpt").click();
-        $("[data-qa=resumeservice-button__targetemployer]").shouldBe(visible);
+    void checkPresenseOfButtonToGoToX5GroupSite() {
+        siteObjects.openPage()
+                .putValueInSearchFieldAndSubmit("X5 Group")
+                .unsetCurrentCityFromFilter(currentCityRus)
+                .clickOnCompanyCardInSearchResults("X5 Group")
+                .goToCompanyPageFromVacancyCard("X5 GROUP, Import")
+                .goToX5TechPage()
+                .CheckIWantToWorkHereButtonIsVisible();
     }
 
 }
