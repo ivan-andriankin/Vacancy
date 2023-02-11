@@ -48,7 +48,7 @@ gradle-app.setting
 .classpath
 
 # draft.txt
-notifications/draft.txt
+draft.txt
 
 ### Gradle Patch ###
 # Java heap dump
