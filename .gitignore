@@ -50,8 +50,6 @@ gradle-app.setting
 # draft.txt
 draft.txt
 
-###
-
 ### Gradle Patch ###
 # Java heap dump
 *.hprof
