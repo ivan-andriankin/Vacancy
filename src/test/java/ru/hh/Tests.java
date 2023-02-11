@@ -28,7 +28,7 @@ public class Tests extends TestBase {
 //                .unsetCurrentCityFromFilter(currentCityRus)
                 .clickOnCompanyCardInSearchResults(x5Group)
                 .goToCompanyPageFromVacancyCard(x5GroupImport)
-                .expandVacanciesDropDownCategories("Вакансии в других регионах")
+//                .expandVacanciesDropDownCategories("Вакансии в других регионах")
                 .expandVacanciesDropDownCategories("Тестировщик")
                 .clickOnTheVacancy("QA-инженер (web)")
                 .checkVacancyTitle("QA-инженер (web)")
