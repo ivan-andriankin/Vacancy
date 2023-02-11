@@ -25,7 +25,7 @@ public class SiteObjects {
             locationForVacancy = $$("[data-qa=serp__novafilter-title]"),
             allDivElements = $$("div"),
             companyNameInVacancyCard = $$("[data-qa=vacancy-serp__vacancy-employer]"),
-            allSpanElements = $$("span"),
+            allSpanBlockElements = $$("span[.bloko-link__content]"),
             particularVacancy = $$(".bloko-link"),
             languageButton = $$(".lang--N5GSKUyI3fBf0bLLxFVh"),
             buttonsInTopMenu = $$(".supernova-navi-item.supernova-navi-item_lvl-1"),
@@ -63,7 +63,7 @@ public class SiteObjects {
     }
 
     public SiteObjects expandVacanciesDropDownCategories(String value) {
-        allSpanElements.findBy(text(value)).click();
+        allSpanBlockElements.findBy(text(value)).click();
         return this;
     }
 
