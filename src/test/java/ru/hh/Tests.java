@@ -25,7 +25,7 @@ public class Tests extends TestBase {
     void findVacancyQaEngineerInX5Group() {
         siteObjects.openPage()
                 .putValueInSearchFieldAndSubmit(x5Group)
-                .unsetCurrentCityFromFilter(currentCityRus)
+//                .unsetCurrentCityFromFilter(currentCityRus)
                 .clickOnCompanyCardInSearchResults(x5Group)
                 .goToCompanyPageFromVacancyCard(x5GroupImport)
                 .expandVacanciesDropDownCategories("Вакансии в других регионах")
