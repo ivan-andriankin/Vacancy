@@ -16,7 +16,9 @@ public class SiteObjects {
             searchInput = $("#a11y-search-input"),
             phraseOne = $("h1[data-qa=bloko-header-2]"),
             iWantToWorkHereButton = $("[data-qa=resumeservice-button__targetemployer]"),
-            x5TechElement = $(".th_illustration__link.th_illustration__link--tech.th_dpt")
+            x5TechElement = $(".th_illustration__link.th_illustration__link--tech.th_dpt"),
+            vacancyTitle = $("data-qa=vacancy-title"),
+            vacancyResponseLink = $("data-qa=vacancy-response-link-top")
     ;
 
     private ElementsCollection
@@ -29,6 +31,7 @@ public class SiteObjects {
             buttonsInTopMenu = $$(".supernova-navi-item.supernova-navi-item_lvl-1"),
             phraseTwo = $$("a[data-qa=index__work-in-profession-header]"),
             accountLoginTitle = $$(".account-login-tile")
+
 
     ;
 
@@ -106,6 +109,16 @@ public class SiteObjects {
 
     public SiteObjects goToX5TechPage() {
         x5TechElement.click();
+        return this;
+    }
+
+    public SiteObjects checkVacancyTitle(String value) {
+        vacancyTitle.shouldHave(text(value));
+        return this;
+    }
+
+    public SiteObjects clickVacancyResponseButton() {
+        vacancyResponseLink.click();
         return this;
     }
 

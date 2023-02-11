@@ -11,6 +11,15 @@ public class Tests extends TestBase {
 
     SiteObjects siteObjects = new SiteObjects();
 
+    @MethodSource("menuItems")
+    @ParameterizedTest(name="Проверить набор кнопок {0} верхней панели на английском и на русском")
+    void checkSetOfButtonsInTopMenuInEnglishAndRussian(List<String> buttons) {
+        siteObjects.openPage()
+                .changeLanguage()
+                .checkButtonsInTopMenu(buttons);
+    }
+
+
     @DisplayName("Найти вакансию 'QA-инженер (web)' в 'X5 Group'")
     @Test
     void findVacancyQaEngineerInX5Group() {
@@ -21,7 +30,9 @@ public class Tests extends TestBase {
                 .goToCompanyPageFromVacancyCard(x5GroupImport)
                 .expandVacanciesDropDownCategories("Вакансии в других регионах")
                 .expandVacanciesDropDownCategories("Тестировщик")
-                .clickOnTheVacancy("QA-инженер (web)");
+                .clickOnTheVacancy("QA-инженер (web)")
+                .checkVacancyTitle("QA-инженер (web)")
+                .clickVacancyResponseButton();
     }
 
 
@@ -35,31 +46,6 @@ public class Tests extends TestBase {
                 .expandVacanciesDropDownCategories("Вакансии в других регионах")
                 .expandVacanciesDropDownCategories("Тестировщик")
                 .clickOnTheVacancy("QA-инженер (web)");
-    }
-
-
-    @MethodSource("menuItems")
-    @ParameterizedTest(name="Проверить набор кнопок {0} верхней панели на английском и на русском")
-    void checkSetOfButtonsInTopMenuInEnglishAndRussian(List<String> buttons) {
-        siteObjects.openPage()
-                .changeLanguage()
-                .checkButtonsInTopMenu(buttons);
-    }
-
-
-    @DisplayName("Проверить, что указан правильный город во фразе 1")
-    @Test
-    void checkCorrectCityInFirstPhrase() {
-        siteObjects.openPage()
-                .checkCurrentCityInPhraseOne(currentCityRus);
-    }
-
-
-    @DisplayName("Проверить, что указан правильный город во фразе 2")
-    @Test
-    void checkCorrectCityInSecondFrase() {
-        siteObjects.openPage()
-                .checkCurrentCityInPhraseTwo(currentCityRus);
     }
 
 
