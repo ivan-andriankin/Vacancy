@@ -17,8 +17,8 @@ public class SiteObjects {
             phraseOne = $("h1[data-qa=bloko-header-2]"),
             iWantToWorkHereButton = $("[data-qa=resumeservice-button__targetemployer]"),
             x5TechElement = $(".th_illustration__link.th_illustration__link--tech.th_dpt"),
-            vacancyTitle = $("data-qa=vacancy-title"),
-            vacancyResponseLink = $("data-qa=vacancy-response-link-top")
+            vacancyTitle = $("[data-qa=vacancy-title]"),
+            vacancyResponseLink = $("[data-qa=vacancy-response-link-top]")
     ;
 
     private ElementsCollection

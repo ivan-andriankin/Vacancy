@@ -9,8 +9,6 @@ import java.util.List;
 
 public class Tests extends TestBase {
 
-    SiteObjects siteObjects = new SiteObjects();
-
     @MethodSource("menuItems")
     @ParameterizedTest(name="Проверить набор кнопок {0} верхней панели на английском и на русском")
     void checkSetOfButtonsInTopMenuInEnglishAndRussian(List<String> buttons) {
