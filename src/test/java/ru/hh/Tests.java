@@ -41,9 +41,9 @@ public class Tests extends TestBase {
     void findVacancyBackendQaEngineerInX5Digital() {
         siteObjects.openPage()
                 .putValueInSearchFieldAndSubmit(x5Digital)
-                .unsetCurrentCityFromFilter(currentCityRus)
+//                .unsetCurrentCityFromFilter(currentCityRus)
                 .goToCompanyPageFromVacancyCard(x5Digital)
-                .expandVacanciesDropDownCategories("Вакансии в других регионах")
+//                .expandVacanciesDropDownCategories("Вакансии в других регионах")
                 .expandVacanciesDropDownCategories("Тестировщик")
                 .clickOnTheVacancy("Backend QA engineer");
     }
@@ -54,7 +54,7 @@ public class Tests extends TestBase {
     void checkPresenseOfButtonToGoToX5DigitalSite() {
         siteObjects.openPage()
                 .putValueInSearchFieldAndSubmit(x5Digital)
-                .unsetCurrentCityFromFilter(currentCityRus)
+//                .unsetCurrentCityFromFilter(currentCityRus)
                 .goToCompanyPageFromVacancyCard(x5Digital)
                 .clickIWantToWorkHereButton()
                 .checkTitleOfFirstAccountLoginForm();
@@ -66,7 +66,7 @@ public class Tests extends TestBase {
     void checkPresenseOfButtonToGoToX5GroupSite() {
         siteObjects.openPage()
                 .putValueInSearchFieldAndSubmit(x5Group)
-                .unsetCurrentCityFromFilter(currentCityRus)
+//                .unsetCurrentCityFromFilter(currentCityRus)
                 .clickOnCompanyCardInSearchResults(x5Group)
                 .goToCompanyPageFromVacancyCard(x5GroupImport)
                 .goToX5TechPage()
