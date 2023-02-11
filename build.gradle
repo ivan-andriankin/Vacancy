@@ -58,8 +58,8 @@ test {
 	systemProperties(System.getProperties())
 }
 
-task sample_test(type: Test) {
+task vacancy_test(type: Test) {
 	useJUnitPlatform {
-		includeTags("sample")
+		includeTags("vacancy_tests")
 	}
 }
