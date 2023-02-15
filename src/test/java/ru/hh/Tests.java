@@ -15,7 +15,7 @@ public class Tests extends TestBase {
 
     @Severity(SeverityLevel.NORMAL)
     @MethodSource("menuItems")
-    @ParameterizedTest(name="TA - Проверить набор кнопок {0} верхней панели на английском и на русском")
+    @ParameterizedTest(name="AT - Проверить набор кнопок {0} верхней панели на английском и на русском")
     void checkSetOfButtonsInTopMenuInEnglishAndRussian(List<String> buttons) {
         siteObjects.openPage()
                 .changeLanguage()
@@ -24,7 +24,7 @@ public class Tests extends TestBase {
 
 
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("TA - Найти вакансию 'QA-инженер (web)' в 'X5 Group'")
+    @DisplayName("AT - Найти вакансию 'QA-инженер (web)' в 'X5 Group'")
     @Test
     void findVacancyQaEngineerInX5Group() {
         siteObjects.openPage()
@@ -41,7 +41,7 @@ public class Tests extends TestBase {
 
 
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("TA - Найти вакансию 'Backend QA engineer' в 'X5 Digital'")
+    @DisplayName("AT - Найти вакансию 'Backend QA engineer' в 'X5 Digital'")
     @Test
     void findVacancyBackendQaEngineerInX5Digital() {
         siteObjects.openPage()
@@ -55,7 +55,7 @@ public class Tests extends TestBase {
 
 
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("TA - Проверить наличие кнопки перехода на сайт X5 Digital")
+    @DisplayName("AT - Проверить наличие кнопки перехода на сайт X5 Digital")
     @Test
     void checkPresenseOfButtonToGoToX5DigitalSite() {
         siteObjects.openPage()
@@ -68,7 +68,7 @@ public class Tests extends TestBase {
 
 
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("TA - Проверить наличие кнопки перехода на сайт X5 Group")
+    @DisplayName("AT - Проверить наличие кнопки перехода на сайт X5 Group")
     @Test
     void checkPresenseOfButtonToGoToX5GroupSite() {
         siteObjects.openPage()
