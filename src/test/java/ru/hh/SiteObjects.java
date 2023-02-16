@@ -31,8 +31,6 @@ public class SiteObjects {
             buttonsInTopMenu = $$(".supernova-navi-item.supernova-navi-item_lvl-1"),
             phraseTwo = $$("a[data-qa=index__work-in-profession-header]"),
             accountLoginTitle = $$(".account-login-tile")
-
-
     ;
 
 
