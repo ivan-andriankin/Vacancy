@@ -24,6 +24,8 @@ Technologies I used in this work:
 - [x] <b>Allure reports</b>
 <img src="/images/Allure_Report.png" width="400" height="220">
 
+- [x] <b>Telegram notifications</b>
+<img src="/images/telegram-notification.png" width="200" height="210">
 
 <br><br>
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=ivan-andriankin)](https://github.com/ivan-andriankin/Vacancy/github-readme-stats)
