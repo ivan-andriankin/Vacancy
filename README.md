@@ -13,10 +13,16 @@ Technologies I used in this work:
 
 :triangular_flag_on_post: What's special:
 
-- [x] Page Object
-- [x] Parametrised build
-- [x] Integration with Jira
-- [x] Allure reports
+- [x] <b>Page Object</b>
+- [x] <b>Parametrised build</b>
+- [x] <b>Allure TestOps</b>
+<img src="/images/Allure_TestOps.png" width="500" height="150">
+
+- [x] <b>Integration with Jira</b>
+<img src="/images/Jira.png" width="400" height="450">
+
+- [x] <b>Allure reports</b>
+<img src="/images/Allure_Report.png" width="400" height="220">
 
 
 <br><br>
