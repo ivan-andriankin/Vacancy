@@ -1,6 +1,6 @@
 ### Hi there, I'm Ivan Andriankin
 
-I'm a Senior QA engineer with 8 years experience of manual testing. Currently I'm studing test automation with Java in <a href="https://qa.guru/">QA.GURU</a>.
+I'm a Senior QA engineer with 8 years experience of manual testing. Currently I'm studing test automation with Java.
 <br><br>
  
 This project is a small presentation of my skills.
